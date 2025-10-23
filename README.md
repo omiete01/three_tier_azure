@@ -26,7 +26,16 @@ A secure, production-ready three-tier web infrastructure deployed on Microsoft A
 
 ---
 
-## 🚀 Deployment
+## Project Structure
+
+```
+├── main.tf              # Core infrastructure (VNet, subnets, VM, LB, Bastion, NAT Gateway)
+├── setup.sh             # Cloud-init script to install and start NGINX
+└── README.md            # This file
+```
+---
+
+## Deployment
 
 1. Clone this repository:
    ```bash
@@ -39,7 +48,7 @@ A secure, production-ready three-tier web infrastructure deployed on Microsoft A
    terraform init
    ```
 
-3. Validate Terraform:
+3. Validate Terraform code:
    ```bash
    terraform validate
    ```
@@ -70,22 +79,9 @@ A secure, production-ready three-tier web infrastructure deployed on Microsoft A
 
 ---
 
-## Project Structure
-
-```
-.
-├── main.tf              # Core infrastructure (VNet, subnets, VM, LB, Bastion, NAT Gateway)
-├── setup.sh             # Cloud-init script to install and start NGINX
-└── README.md            # This file
-```
-
----
-
 ## Cleanup
 
 To avoid Azure charges, destroy all resources when done:
 ```bash
 terraform destroy
 ```
-
----
